@@ -58,7 +58,11 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
     @media (min-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-  `
+  `;
 
     return acc
 }, {});
+
+export const setTransition = ({property = 'all', time = '0.3s', timing = 'ease-in-out'} = {}) => {
+    return `transition ${property} ${time} ${timing}`
+};
